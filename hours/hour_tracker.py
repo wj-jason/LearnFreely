@@ -7,7 +7,7 @@ SET UP PROCESS:
 1. create new service account using google sheets api (might need google drive api)
 2. add email associated with service account to users of sheet
 3. create json key
-4. mv /path/to/json/key /other/path/to/repo/key.json <- idk if this is best practice lol
+4. mv /path/to/json/key /other/path/to/repo/key.json
 
 ensure time is synced, if error run: sudo hwclock -s
 '''

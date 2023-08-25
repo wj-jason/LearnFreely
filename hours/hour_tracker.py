@@ -9,6 +9,8 @@ SET UP PROCESS:
 3. create json key
 4. mv /path/to/json/key /other/path/to/repo/key.json
 
+Do this using .env instead!!!!!
+
 ensure time is synced, if error run: sudo hwclock -s
 '''
 

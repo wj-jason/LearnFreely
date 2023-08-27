@@ -1,11 +1,13 @@
 import gspread
 import re
+import os
+from dotenv import load_dotenv
+load_dotenv()
 
 # ensure time is synced, if error run: sudo hwclock -s
-
 sa = gspread.service_account()
-sh = sa.open("Logbook")
-worksheet = sh.worksheet('Form Responses 1')
+sh = sa.open(os.getenv("HOUR_TRACKER_OPEN"))
+worksheet = sh.worksheet(os.getenv("HOUR_TRACKER_WORKSHEET"))
 
 # hour_tracker = "hours.csv"
 # log = "update_log.txt"

@@ -1,5 +1,4 @@
 import gspread
-import re
 import os
 from dotenv import load_dotenv
 load_dotenv()
@@ -10,14 +9,14 @@ sh = sa.open(os.getenv("PAIR_OPEN"))
 worksheet = sh.worksheet(os.getenv("PAIR_WORKSHEET"))
 
 '''
-worksheet.col_values(2)[2:]: Math
-worksheet.col_values(3)[2:]: Chemistry
-worksheet.col_values(4)[2:]: Physics
-worksheet.col_values(5)[2:]: Biology
-worksheet.col_values(6)[2:]: English
-worksheet.col_values(7)[2:]: Science
+worksheet.col_values(7)[2:]: Math
+worksheet.col_values(8)[2:]: Chemistry
+worksheet.col_values(9)[2:]: Physics
+worksheet.col_values(10)[2:]: Biology
+worksheet.col_values(11)[2:]: English
+worksheet.col_values(12)[2:]: Science
 
-worksheet.col_values(8)[2:]: Other
+worksheet.col_values(13)[2:]: Other
 
 Science 1206     -> SN1
 Chemistry 3200   -> CN3
@@ -27,8 +26,8 @@ First char:          First letter of subject
 Second character:    A for AP, I for IB, N for None
 Third character:     Course level (4 for AP/IB)
 '''
-col_range = [2, 3, 4, 5, 6, 7]
-
+# make sure to change 'other' handling if editing this range
+col_range = [7, 8, 9, 10, 11, 12]
 
 total = {
     'M':[],
@@ -36,7 +35,8 @@ total = {
     'P':[],
     'B':[],
     'E':[],
-    'S':[]
+    'S':[],
+    'Other': []
 }
 
 for column in col_range:
@@ -51,4 +51,9 @@ for column in col_range:
                 col_key = worksheet.col_values(column)[1][0]
                 total[col_key].append(f'{col_key}{entry[0]}4')
 
-# print(total)
+# handle 'other'
+for entry in worksheet.col_values(13)[2:]:
+    if entry:
+        total['Other'].append(entry)
+
+print(total)

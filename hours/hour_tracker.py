@@ -1,22 +1,10 @@
 import gspread
 import re
 
-'''
-SET UP PROCESS:
+# ensure time is synced, if error run: sudo hwclock -s
 
-1. create new service account using google sheets api (might need google drive api)
-2. add email associated with service account to users of sheet
-3. create json key
-4. mv /path/to/json/key /other/path/to/repo/key.json
-
-Do this using .env instead!!!!!
-
-ensure time is synced, if error run: sudo hwclock -s
-'''
-
-sa = gspread.service_account(filename="hours/key.json")
+sa = gspread.service_account()
 sh = sa.open("Logbook")
-
 worksheet = sh.worksheet('Form Responses 1')
 
 # hour_tracker = "hours.csv"
@@ -30,3 +18,5 @@ def extract_numeric(value):
     return float(numeric_part) if numeric_part else 0.0
 
 cleaned_time = sum([extract_numeric(value) for value in total])
+
+print(cleaned_time)

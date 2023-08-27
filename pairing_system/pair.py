@@ -45,11 +45,11 @@ for column in col_range:
             # not AP or IB
             if len(entry) > 2:
                 col_key = worksheet.col_values(column)[1][0]
-                total[col_key].append(f'{col_key}N{entry[-1]}')
+                total[col_key].append(f'{col_key}N{entry[-1]}') # second char will always be N
             # AP or IB
             else:
                 col_key = worksheet.col_values(column)[1][0]
-                total[col_key].append(f'{col_key}{entry[0]}4')
+                total[col_key].append(f'{col_key}{entry[0]}4') # third char will always be 4
 
 # handle 'other'
 for entry in worksheet.col_values(13)[2:]:

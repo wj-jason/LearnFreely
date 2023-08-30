@@ -6,4 +6,4 @@ This repository currently contains small scripts for use by the team, but we soo
 
 Contact us at info@learnfreely.ca
 
-As of August 30, 2023 this repo has been moved under LearnFreely-Scripts managed by new user learnfreely: https://github.com/learnfreely/LearnFreely-Scripts
+As of August 30, 2023 this repo has been moved under LearnFreely-Scripts managed by new organization account: https://github.com/learnfreely

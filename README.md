@@ -5,3 +5,5 @@ Based in St. John's NL, LearnFreely is a local not-for-profit organization offer
 This repository currently contains small scripts for use by the team, but we soon plan to migrate the website off Wordpress so this repository will be used to facilitate development of the site. 
 
 Contact us at info@learnfreely.ca
+
+As of August 30, 2023 this repo has been moved under LearnFreely-Scripts managed by new user learnfreely: github.com/learnfreely/LearnFreely-Scripts

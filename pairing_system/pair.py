@@ -52,6 +52,8 @@ for column in col_range:
                 total[col_key].append(f'{col_key}{entry[0]}4') # third char will always be 4
 
 # handle 'other'
+# TODO
+# if there is already an entry for a course, then skip this step 
 for entry in worksheet.col_values(13)[2:]:
     if entry:
         total['Other'].append(entry)

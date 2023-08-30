@@ -15,16 +15,15 @@ worksheet.col_values(9)[2:]: Physics
 worksheet.col_values(10)[2:]: Biology
 worksheet.col_values(11)[2:]: English
 worksheet.col_values(12)[2:]: Science
-
 worksheet.col_values(13)[2:]: Other
-
-Science 1206     -> SN1
-Chemistry 3200   -> CN3
-IB English 4283  -> EI4
 
 First char:          First letter of subject
 Second character:    A for AP, I for IB, N for None
 Third character:     Course level (4 for AP/IB)
+
+Science 1206     -> SN1
+Chemistry 3200   -> CN3
+IB English 4283  -> EI4
 '''
 # make sure to change 'other' handling if editing this range
 col_range = [7, 8, 9, 10, 11, 12]
